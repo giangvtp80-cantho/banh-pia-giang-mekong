@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bánh Pía Đặc Sản Mekong - Giang Mekong Cần Thơ</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font - Plus Jakarta Sans & Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            darkGold: '#AA7C11',
+                            red: '#B91C1C',
+                            darkRed: '#7F1D1D',
+                            cream: '#FFFBEB',
+                            dark: '#1C1917'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(28, 25, 23, 0.88) 0%, rgba(127, 29, 29, 0.85) 100%);
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #FEF08A 0%, #D4AF37 50%, #CA8A04 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-btn {
+            background: linear-gradient(135deg, #EAB308 0%, #CA8A04 100%);
+            box-shadow: 0 4px 15px rgba(202, 138, 4, 0.35);
+        }
+        .gold-btn:hover {
+            background: linear-gradient(135deg, #CA8A04 0%, #A16207 100%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-amber-50/30 text-stone-800 font-sans antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-stone-900/95 backdrop-blur border-b border-amber-500/20 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-red-600 flex items-center justify-center font-bold text-xl text-white shadow-lg border border-amber-300/40 group-hover:scale-105 transition-transform">
+                        GM
+                    </div>
+                    <div>
+                        <span class="font-serif text-2xl font-bold tracking-wide text-amber-400 block leading-tight">GIANG MEKONG</span>
+                        <span class="text-xs tracking-widest text-stone-300 uppercase block">Đặc Sản Bánh Pía Cần Thơ</span>
+                    </div>
+                </a>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide">
+                    <a href="#hero" class="hover:text-amber-400 transition-colors">Trang chủ</a>
+                    <a href="#about" class="hover:text-amber-400 transition-colors">Giới thiệu</a>
+                    <a href="#products" class="hover:text-amber-400 transition-colors">Sản phẩm bánh pía</a>
+                    <a href="#order-form" class="hover:text-amber-400 transition-colors">Đặt hàng nhanh</a>
+                    <a href="#gallery" class="hover:text-amber-400 transition-colors">Bộ sưu tập</a>
+                    <a href="#contact" class="hover:text-amber-400 transition-colors">Liên hệ</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="flex items-center space-x-4">
+                    <button id="cartBtn" onclick="toggleCartModal()" class="relative p-2.5 bg-stone-800 rounded-full hover:bg-stone-700 transition-colors border border-amber-500/30">
+                        <i class="fa-solid fa-cart-shopping text-amber-400 text-lg"></i>
+                        <span id="cartBadge" class="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+                    </button>
+                    <a href="tel:0901989717" class="hidden sm:inline-flex items-center space-x-2 gold-btn text-stone-900 font-bold px-4 py-2.5 rounded-full text-sm transition-all transform hover:scale-105">
+                        <i class="fa-solid fa-phone text-stone-900"></i>
+                        <span class="text-stone-900">0901 989 717</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative bg-stone-900 text-white overflow-hidden py-20 lg:py-28">
+        <div class="absolute inset-0 z-0">
+            <img src="https://lh3.googleusercontent.com/d/1FlHzYPCcVXn-QZKVTqzL5jOCX02d4g5-" alt="Bánh Pía Giang Mekong" class="w-full h-full object-cover opacity-20 filter blur-sm">
+            <div class="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-900/90 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-red-900/60 border border-red-500/40 px-3.5 py-1.5 rounded-full text-amber-300 text-sm font-medium">
+                    <i class="fa-solid fa-award"></i>
+                    <span>Thương Hiệu Đặc Sản Gia Truyền Cần Thơ</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-extrabold tracking-tight leading-tight">
+                    Hương Vị Đậm Đà <br>
+                    <span class="gold-gradient">Bánh Pía Giang Mekong</span>
+                </h1>
+                <p class="text-stone-300 text-lg leading-relaxed max-w-xl">
+                    Sự kết hợp hoàn hảo giữa lớp vỏ bánh ngàn lớp mềm mại, nhân sầu riêng Ri6 thơm nức, đậu xanh mịn bùi và lòng đỏ trứng muối béo ngậy. Quà biếu đậm đà bản sắc miền Tây Nam Bộ!
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#products" class="gold-btn text-stone-900 font-bold px-8 py-3.5 rounded-full text-base transition-all transform hover:scale-105 inline-flex items-center space-x-2 shadow-lg">
+                        <span>Xem Tất Cả Sản Phẩm</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="https://zalo.me/84901989717" target="_blank" class="bg-blue-600/20 border border-blue-400/40 text-blue-300 hover:bg-blue-600 hover:text-white font-semibold px-6 py-3.5 rounded-full text-base transition-all inline-flex items-center space-x-2">
+                        <i class="fa-solid fa-comment-dots"></i>
+                        <span>Tư vấn Zalo ngay</span>
+                    </a>
+                </div>
+                <!-- Trust Badges -->
+                <div class="grid grid-cols-3 gap-4 pt-6 border-t border-stone-800 text-stone-400 text-xs sm:text-sm">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-shield-halved text-amber-400 text-lg"></i>
+                        <span>100% An toàn VSTP</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-truck-fast text-amber-400 text-lg"></i>
+                        <span>Giao nhanh Toàn quốc</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-seedling text-amber-400 text-lg"></i>
+                        <span>Nguyên liệu tự nhiên</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Hero Image Display -->
+            <div class="relative flex justify-center">
+                <div class="relative w-full max-w-md lg:max-w-none">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-red-600 rounded-3xl blur opacity-30"></div>
+                    <img src="https://lh3.googleusercontent.com/d/1FlHzYPCcVXn-QZKVTqzL5jOCX02d4g5-" alt="Bánh Pía Đặc Sản Giang Mekong" class="relative rounded-2xl shadow-2xl object-cover w-full h-[380px] sm:h-[450px] border-2 border-amber-500/30">
+                    <div class="absolute -bottom-6 -left-6 bg-stone-900 border border-amber-500/40 p-4 rounded-xl shadow-xl hidden sm:flex items-center space-x-3">
+                        <div class="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400">
+                            <i class="fa-solid fa-star text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-stone-400">Đánh giá từ khách hàng</p>
+                            <p class="text-sm font-bold text-white">4.9 / 5.0 (Hơn 1,200+ đơn hàng)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://lh3.googleusercontent.com/d/1mp6syL4QBcr38gDSt28djKJnV0c0BdxN" alt="Quy trình bánh pía" class="rounded-2xl shadow-md h-64 w-full object-cover">
+                    <img src="https://lh3.googleusercontent.com/d/1M3w7lqcxR7tU1jXUhM2gexiYFcfHQxt8" alt="Nướng bánh pía tươi" class="rounded-2xl shadow-md h-64 w-full object-cover mt-8">
+                </div>
+                <div class="space-y-6">
+                    <span class="text-red-700 font-bold uppercase tracking-wider text-sm">Về Thương Hiệu Giang Mekong</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 leading-tight">
+                        Nghệ Thuật Bánh Pía Gia Truyền Miền Tây Nam Bộ
+                    </h2>
+                    <p class="text-stone-600 leading-relaxed">
+                        Thương hiệu <strong class="text-stone-800">Giang Mekong</strong> tự hào mang đến cho Quý khách những chiếc bánh pía chuẩn vị truyền thống Sóc Trăng - Cần Thơ. Với xưởng bánh tọa lạc tại trung tâm TP. Cần Thơ, chúng tôi luôn khắt khe từ khâu chọn lọc trứng muối béo bùi, sầu riêng chín cây thơm phức đến hạt sen thanh mát.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-amber-600 text-lg mt-1"></i>
+                            <span class="text-stone-700">Công thức xốp mềm nhiều lớp gia truyền chuẩn vị truyền thống.</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-amber-600 text-lg mt-1"></i>
+                            <span class="text-stone-700">Không chất bảo quản độc hại, đảm bảo tươi mới mỗi ngày.</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-amber-600 text-lg mt-1"></i>
+                            <span class="text-stone-700">Bao bì hộp quà lịch sự, thích hợp làm quà tặng, biếu người thân & đối tác.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Products Section -->
+    <section id="products" class="py-20 bg-amber-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-red-700 font-bold uppercase tracking-wider text-sm">Danh Mục Đầy Đủ</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900">Tất Cả Mẫu Bánh Pía Giang Mekong</h2>
+                <p class="text-stone-600">Đa dạng lựa chọn khẩu vị phù hợp nhu cầu thưởng thức và làm quà tặng biếu cao cấp</p>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button onclick="filterProducts('all')" class="cat-tab active bg-red-700 text-white px-5 py-2 rounded-full font-medium text-sm transition-all shadow-sm">Tất cả sản phẩm</button>
+                <button onclick="filterProducts('trung-muoi')" class="cat-tab bg-white hover:bg-amber-100 text-stone-700 px-5 py-2 rounded-full font-medium text-sm transition-all shadow-sm">Bánh Pía Trứng Muối</button>
+                <button onclick="filterProducts('chay-hat-sen')" class="cat-tab bg-white hover:bg-amber-100 text-stone-700 px-5 py-2 rounded-full font-medium text-sm transition-all shadow-sm">Đậu Xanh / Hạt Sen</button>
+                <button onclick="filterProducts('combo')" class="cat-tab bg-white hover:bg-amber-100 text-stone-700 px-5 py-2 rounded-full font-medium text-sm transition-all shadow-sm">Combo Quà Tặng</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="productList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Javascript will inject full list here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Order Form & Customer Data Collection Section -->
+    <section id="order-form" class="py-20 bg-gradient-to-b from-white to-amber-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-red-700 font-bold uppercase tracking-wider text-sm">Mẫu Đặt Hàng Trực Tuyến</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900">Đặt Mua Bánh Pía Nhanh Chóng</h2>
+                <p class="text-stone-600">Điền đầy đủ thông tin nhận hàng bên dưới. Đơn hàng sẽ được gửi trực tiếp tới hệ thống Giang Mekong để xử lý giao hàng ngay cho Quý khách!</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Order Summary & Selected Items -->
+                <div class="lg:col-span-5 bg-white p-6 rounded-2xl border border-amber-200 shadow-md space-y-6">
+                    <h3 class="text-xl font-serif font-bold text-stone-900 border-b border-amber-200 pb-3 flex items-center justify-between">
+                        <span><i class="fa-solid fa-basket-shopping text-red-600 mr-2"></i> Danh sách bánh chọn mua</span>
+                        <span id="selectedCountBadge" class="text-xs bg-red-100 text-red-700 px-2.5 py-1 rounded-full font-bold">0 món</span>
+                    </h3>
+
+                    <!-- Dynamic Cart Preview in Order Form -->
+                    <div id="orderSummaryList" class="space-y-3 max-h-80 overflow-y-auto custom-scrollbar pr-2">
+                        <p class="text-stone-500 text-sm italic text-center py-6">
+                            Chưa có bánh nào trong giỏ hàng.<br>Hãy nhấn "Thêm vào giỏ" ở danh mục trên hoặc chọn bánh nhanh bên dưới!
+                        </p>
+                    </div>
+
+                    <!-- Quick Product Select Add-on -->
+                    <div class="border-t border-dashed border-stone-200 pt-4">
+                        <label class="block text-xs font-bold text-stone-600 uppercase mb-2">Thêm nhanh bánh pía vào đơn hàng:</label>
+                        <div class="flex space-x-2">
+                            <select id="quickSelectProduct" class="flex-1 text-xs border border-stone-300 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                                <!-- Dynamic options -->
+                            </select>
+                            <button type="button" onclick="addQuickSelectedProduct()" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg font-bold text-xs shadow transition-all">
+                                + Thêm
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Price breakdown -->
+                    <div class="bg-amber-50 p-4 rounded-xl space-y-2 text-sm border border-amber-200/60">
+                        <div class="flex justify-between text-stone-600">
+                            <span>Tạm tính:</span>
+                            <span id="subTotalText" class="font-semibold">0đ</span>
+                        </div>
+                        <div class="flex justify-between text-stone-600">
+                            <span>Phí vận chuyển:</span>
+                            <span class="text-green-600 font-semibold">Miễn phí / Đồng giá toàn quốc</span>
+                        </div>
+                        <div class="border-t border-amber-200 pt-2 flex justify-between text-base font-bold text-stone-900">
+                            <span>TỔNG THANH TOÁN:</span>
+                            <span id="grandTotalText" class="text-red-700 text-lg">0đ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Information Collection Form -->
+                <div class="lg:col-span-7 bg-white p-8 rounded-2xl border border-amber-200 shadow-md">
+                    <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-5">
+                        <h3 class="text-xl font-serif font-bold text-stone-900 border-b border-amber-200 pb-3 flex items-center">
+                            <i class="fa-solid fa-address-card text-amber-600 mr-2"></i> Thông Tin Người Nhận Hàng
+                        </h3>
+
+                        <!-- Full Name & Phone -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-stone-700 uppercase mb-1">Họ và tên khách hàng <span class="text-red-600">*</span></label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-stone-400"><i class="fa-solid fa-user"></i></span>
+                                    <input type="text" id="custName" required placeholder="Nguyễn Văn A" class="w-full pl-9 pr-4 py-2.5 rounded-lg border border-stone-300 text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-stone-700 uppercase mb-1">Số điện thoại liên hệ <span class="text-red-600">*</span></label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-stone-400"><i class="fa-solid fa-phone"></i></span>
+                                    <input type="tel" id="custPhone" required placeholder="0901234567" class="w-full pl-9 pr-4 py-2.5 rounded-lg border border-stone-300 text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email & Address -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-stone-700 uppercase mb-1">Địa chỉ Email (Nếu có)</label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-stone-400"><i class="fa-solid fa-envelope"></i></span>
+                                    <input type="email" id="custEmail" placeholder="khachhang@gmail.com" class="w-full pl-9 pr-4 py-2.5 rounded-lg border border-stone-300 text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-stone-700 uppercase mb-1">Tỉnh / Thành phố <span class="text-red-600">*</span></label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-stone-400"><i class="fa-solid fa-city"></i></span>
+                                    <input type="text" id="custCity" required placeholder="Cần Thơ, TP.HCM, Hà Nội..." class="w-full pl-9 pr-4 py-2.5 rounded-lg border border-stone-300 text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Detailed Shipping Address -->
+                        <div>
+                            <label class="block text-xs font-bold text-stone-700 uppercase mb-1">Địa chỉ nhận bánh chi tiết <span class="text-red-600">*</span></label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-stone-400"><i class="fa-solid fa-location-dot"></i></span>
+                                <input type="text" id="custAddress" required placeholder="Số nhà, tên đường, Phường/Xã, Quận/Huyện..." class="w-full pl-9 pr-4 py-2.5 rounded-lg border border-stone-300 text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                            </div>
+                        </div>
+
+                        <!-- Payment Method selection -->
+                        <div>
+                            <label class="block text-xs font-bold text-stone-700 uppercase mb-2">Hình thức thanh toán mong muốn</label>
+                            <div class="grid grid-cols-2 gap-3 text-sm">
+                                <label class="flex items-center space-x-2 border border-stone-300 p-3 rounded-lg cursor-pointer hover:border-amber-500">
+                                    <input type="radio" name="payMethod" value="COD (Thanh toán khi nhận hàng)" checked class="text-amber-600 focus:ring-amber-500">
+                                    <span class="font-semibold text-stone-800">Thanh toán COD khi nhận bánh</span>
+                                </label>
+                                <label class="flex items-center space-x-2 border border-stone-300 p-3 rounded-lg cursor-pointer hover:border-amber-500">
+                                    <input type="radio" name="payMethod" value="Chuyển khoản Ngân hàng / ZaloPay" class="text-amber-600 focus:ring-amber-500">
+                                    <span class="font-semibold text-stone-800">Chuyển khoản Ngân hàng / ZaloPay</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Special Notes -->
+                        <div>
+                            <label class="block text-xs font-bold text-stone-700 uppercase mb-1">Ghi chú giao hàng hoặc quà biếu</label>
+                            <textarea id="custNote" rows="2" placeholder="Ví dụ: Giao vào giờ hành chính, đóng gói quà biếu cẩn thận giúp em..." class="w-full p-3 rounded-lg border border-stone-300 text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="submitBtn" class="w-full gold-btn text-stone-900 font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all text-base flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-paper-plane text-lg"></i>
+                            <span>XÁC NHẬN GỬI ĐƠN HÀNG NGAY</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-stone-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-amber-400 font-bold uppercase tracking-wider text-sm">Hình Ảnh Thực Tế</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Bộ Sưu Tập Bánh Pía Giang Mekong</h2>
+                <p class="text-stone-400">Hình ảnh sản phẩm & quy trình làm bánh pía kỳ công từ thương hiệu Giang Mekong</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-xl border border-amber-500/20 group">
+                    <img src="https://lh3.googleusercontent.com/d/1FlHzYPCcVXn-QZKVTqzL5jOCX02d4g5-" alt="Gallery 1" class="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl border border-amber-500/20 group">
+                    <img src="https://lh3.googleusercontent.com/d/1cNtiCOupTAcXonfxu8wzpyTaccrHdhMb" alt="Gallery 2" class="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl border border-amber-500/20 group">
+                    <img src="https://lh3.googleusercontent.com/d/15yn8AHdrkz_hsqb8I7nzZhXET7B--q17" alt="Gallery 3" class="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl border border-amber-500/20 group">
+                    <img src="https://lh3.googleusercontent.com/d/1DxTRi1jCq9FzuePsi16Aen66k73Gf1RP" alt="Gallery 4" class="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl border border-amber-500/20 group">
+                    <img src="https://lh3.googleusercontent.com/d/1mp6syL4QBcr38gDSt28djKJnV0c0BdxN" alt="Gallery 5" class="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl border border-amber-500/20 group">
+                    <img src="https://lh3.googleusercontent.com/d/1M3w7lqcxR7tU1jXUhM2gexiYFcfHQxt8" alt="Gallery 6" class="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl border border-amber-500/20 group">
+                    <img src="https://lh3.googleusercontent.com/d/1uuQG7bClCdVVpcTsENDDZJkFC3-Q9h4E" alt="Gallery 7" class="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl border border-amber-500/20 group">
+                    <img src="https://lh3.googleusercontent.com/d/1FlHzYPCcVXn-QZKVTqzL5jOCX02d4g5-" alt="Gallery 8" class="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Store Info Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Contact Info Left -->
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-red-700 font-bold uppercase tracking-wider text-sm">Thông Tin Cửa Hàng</span>
+                        <h2 class="text-3xl font-serif font-bold text-stone-900 mt-2">Giang Mekong Cần Thơ</h2>
+                        <p class="text-stone-600 mt-3 leading-relaxed">Chúng tôi hân hạnh phục vụ và tư vấn đơn hàng đặt sỉ/lẻ, hợp tác phân phối bánh pía toàn quốc.</p>
+                    </div>
+
+                    <div class="space-y-5">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-amber-700 shrink-0 text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-900 text-base">Địa chỉ trụ sở cửa hàng</h4>
+                                <p class="text-stone-600 text-sm mt-0.5">14 Nguyễn Thị Minh Khai, P. Ninh Kiều, TP. Cần Thơ</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-amber-700 shrink-0 text-xl">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-900 text-base">Điện thoại Hotline & Zalo</h4>
+                                <p class="text-stone-600 text-sm mt-0.5"><strong>0901 989 717</strong> (Zalo tư vấn: 84901989717)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-amber-700 shrink-0 text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-900 text-base">Hộp thư Điện tử Email</h4>
+                                <p class="text-stone-600 text-sm mt-0.5">giangnt1980ct@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Channels Buttons -->
+                    <div class="pt-2">
+                        <h4 class="font-bold text-stone-900 mb-3">Theo dõi Kênh Truyền Thông Giang Mekong:</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://zalo.me/84901989717" target="_blank" class="px-4 py-2.5 rounded-lg bg-blue-600 text-white font-semibold text-xs flex items-center space-x-2 hover:opacity-90 shadow-sm">
+                                <i class="fa-solid fa-comment"></i>
+                                <span>Zalo: 84901989717</span>
+                            </a>
+                            <a href="https://www.facebook.com/giangmekong65" target="_blank" class="px-4 py-2.5 rounded-lg bg-blue-700 text-white font-semibold text-xs flex items-center space-x-2 hover:opacity-90 shadow-sm">
+                                <i class="fa-brands fa-facebook-f"></i>
+                                <span>Facebook Page</span>
+                            </a>
+                            <a href="https://www.tiktok.com/@giang_mekong" target="_blank" class="px-4 py-2.5 rounded-lg bg-stone-900 text-white font-semibold text-xs flex items-center space-x-2 hover:opacity-90 shadow-sm">
+                                <i class="fa-brands fa-tiktok"></i>
+                                <span>TikTok @giang_mekong</span>
+                            </a>
+                            <a href="https://www.youtube.com/@giangmekong" target="_blank" class="px-4 py-2.5 rounded-lg bg-red-600 text-white font-semibold text-xs flex items-center space-x-2 hover:opacity-90 shadow-sm">
+                                <i class="fa-brands fa-youtube"></i>
+                                <span>YouTube @giangmekong</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Card Placeholder -->
+                <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200 shadow-sm text-center space-y-4">
+                    <div class="w-16 h-16 rounded-full bg-amber-200/80 flex items-center justify-center mx-auto text-amber-800 text-2xl">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-stone-900">Giao Hàng Tận Nơi Toàn Quốc</h3>
+                    <p class="text-stone-600 text-sm">
+                        Cửa hàng Giang Mekong tại Cần Thơ tiếp nhận đơn hàng và đóng gói gửi chành xe, viettelpost, giaohangtietkiem siêu tốc đến tận tay Quý khách trên 63 tỉnh thành.
+                    </p>
+                    <a href="tel:0901989717" class="inline-flex items-center space-x-2 bg-stone-900 text-amber-400 font-bold px-6 py-3 rounded-xl text-sm hover:bg-stone-800 transition-colors">
+                        <i class="fa-solid fa-headset"></i>
+                        <span>Gọi Hotline Tư Vấn Ngay: 0901 989 717</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 text-stone-400 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex items-center justify-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-red-600 flex items-center justify-center font-bold text-white">
+                    GM
+                </div>
+                <span class="font-serif text-2xl font-bold text-amber-400">GIANG MEKONG</span>
+            </div>
+            <p class="text-sm">Đặc sản Bánh Pía Cần Thơ - Hương vị truyền thống thơm ngon đậm đà</p>
+            <p class="text-xs text-stone-500">© 2026 GIANG MEKONG. All rights reserved. Địa chỉ: 14 Nguyễn Thị Minh Khai, P.Ninh Kiều, TP.Cần Thơ.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal Side Panel -->
+    <div id="cartModal" class="fixed inset-0 bg-black/60 z-50 flex justify-end hidden">
+        <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col p-6 overflow-y-auto">
+            <div class="flex items-center justify-between border-b pb-4">
+                <h3 class="text-xl font-bold text-stone-900 font-serif flex items-center">
+                    <i class="fa-solid fa-cart-shopping text-amber-600 mr-2"></i> Giỏ hàng của bạn
+                </h3>
+                <button onclick="toggleCartModal(false)" class="text-stone-400 hover:text-stone-700 text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div id="cartItems" class="flex-1 py-4 space-y-4 overflow-y-auto custom-scrollbar">
+                <p class="text-stone-500 text-center py-8">Giỏ hàng đang trống.</p>
+            </div>
+
+            <div class="border-t pt-4 space-y-4">
+                <div class="flex justify-between font-bold text-lg text-stone-900">
+                    <span>Tổng tiền:</span>
+                    <span id="cartTotal" class="text-red-600">0đ</span>
+                </div>
+                <button onclick="checkoutCart()" class="w-full gold-btn text-stone-900 font-bold py-3.5 rounded-xl shadow-md">
+                    Tiến Hành Điền Đơn Đặt Hàng
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Javascript Logic -->
+    <script>
+        // Google Apps Script Deployment API URL
+        const API_URL = "https://script.google.com/macros/s/AKfycbwQFXghompcXYqNCfAFJ-IyWhRLGEmDsP59mOyDHcF7Rm3YaO3sdbZRrF_AGB9rIwL8Qw/exec";
+
+        // Complete Product Catalog with all uploaded images
+        const productsData = [
+            {
+                id: 1,
+                category: 'trung-muoi',
+                name: "Bánh Pía Sầu Riêng Trứng Muối (Đặc Đặc Biệt)",
+                price: 120000,
+                img: "https://lh3.googleusercontent.com/d/1FlHzYPCcVXn-QZKVTqzL5jOCX02d4g5-",
+                desc: "Vỏ ngàn lớp mềm dẻo, nhân sầu riêng Ri6 đậm đà kết hợp 2 trứng muối vàng ươm béo ngậy."
+            },
+            {
+                id: 2,
+                category: 'chay-hat-sen',
+                name: "Bánh Pía Đậu Xanh Sầu Riêng",
+                price: 100000,
+                img: "https://lh3.googleusercontent.com/d/1cNtiCOupTAcXonfxu8wzpyTaccrHdhMb",
+                desc: "Hương vị thanh ngọt dịu mát từ đậu xanh xát vỏ quyện hương sầu riêng quyến rũ."
+            },
+            {
+                id: 3,
+                category: 'chay-hat-sen',
+                name: "Bánh Pía Hạt Sen Sầu Riêng",
+                price: 110000,
+                img: "https://lh3.googleusercontent.com/d/15yn8AHdrkz_hsqb8I7nzZhXET7B--q17",
+                desc: "Nhân hạt sen bùi mát, thanh nhiệt hòa quyện cùng sầu riêng chín cây thơm lừng."
+            },
+            {
+                id: 4,
+                category: 'combo',
+                name: "Combo Bánh Pía Thập Cẩm Hảo Hạng",
+                price: 320000,
+                img: "https://lh3.googleusercontent.com/d/1DxTRi1jCq9FzuePsi16Aen66k73Gf1RP",
+                desc: "Hộp quà biếu sang trọng gồm 4 gói bánh pía các loại cao cấp từ thương hiệu Giang Mekong."
+            },
+            {
+                id: 5,
+                category: 'trung-muoi',
+                name: "Bánh Pía Kim Sa Trứng Muối Tan Chảy",
+                price: 135000,
+                img: "https://lh3.googleusercontent.com/d/1mp6syL4QBcr38gDSt28djKJnV0c0BdxN",
+                desc: "Nhân kim sa trứng muối béo ngậy dạng lỏng tan chảy tức thì khi cắn vào vỏ bánh."
+            },
+            {
+                id: 6,
+                category: 'chay-hat-sen',
+                name: "Bánh Pía Đậu Xanh Sầu Riêng Chay (Không Trứng)",
+                price: 95000,
+                img: "https://lh3.googleusercontent.com/d/1M3w7lqcxR7tU1jXUhM2gexiYFcfHQxt8",
+                desc: "Dành cho người ăn chay hoặc thanh tịnh, nhân đậu xanh sầu riêng dẻo thơm nguyên bản."
+            },
+            {
+                id: 7,
+                category: 'combo',
+                name: "Hộp Quà Biếu Đặc Sản Giang Mekong Luxury",
+                price: 450000,
+                img: "https://lh3.googleusercontent.com/d/1uuQG7bClCdVVpcTsENDDZJkFC3-Q9h4E",
+                desc: "Bộ quà tặng cao cấp gồm các dòng bánh pía thượng hạng, thiết kế hộp quà tinh tế lịch sự."
+            },
+            {
+                id: 8,
+                category: 'trung-muoi',
+                name: "Bánh Pía Môn Sầu Riêng 2 Trứng Muối",
+                price: 125000,
+                img: "https://lh3.googleusercontent.com/d/1FlHzYPCcVXn-QZKVTqzL5jOCX02d4g5-",
+                desc: "Sự kết hợp độc đáo giữa khoai môn dẻo bùi, sầu riêng chín & trứng muối đậm đà."
+            }
+        ];
+
+        let cart = [];
+
+        // Render Products with Category Filter
+        function renderProducts(filterCategory = 'all') {
+            const list = document.getElementById('productList');
+            const filtered = filterCategory === 'all' 
+                ? productsData 
+                : productsData.filter(p => p.category === filterCategory);
+
+            list.innerHTML = filtered.map(p => `
+                <div class="bg-white rounded-2xl overflow-hidden border border-amber-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative overflow-hidden h-48 sm:h-52">
+                        <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-red-700 text-amber-200 font-bold text-xs px-2.5 py-1 rounded-full shadow">
+                            Đặc sản Cần Thơ
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-bold text-stone-900 text-base sm:text-lg font-serif mb-1 leading-snug hover:text-amber-700 transition-colors">${p.name}</h3>
+                            <p class="text-stone-500 text-xs leading-relaxed line-clamp-2">${p.desc}</p>
+                        </div>
+                        <div>
+                            <div class="flex items-baseline justify-between mb-3">
+                                <span class="text-lg font-extrabold text-red-600">${p.price.toLocaleString('vi-VN')}đ</span>
+                                <span class="text-xs text-stone-400">Gói 4 chiếc</span>
+                            </div>
+                            <button onclick="addToCart(${p.id})" class="w-full bg-stone-900 hover:bg-amber-600 text-amber-400 hover:text-white font-semibold py-2.5 rounded-xl transition-all flex items-center justify-center space-x-2 text-xs shadow">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <span>Thêm vào giỏ hàng</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Populate Quick Select Options in Form
+        function populateQuickSelectOptions() {
+            const select = document.getElementById('quickSelectProduct');
+            select.innerHTML = productsData.map(p => `
+                <option value="${p.id}">${p.name} - ${p.price.toLocaleString('vi-VN')}đ</option>
+            `).join('');
+        }
+
+        // Add item from quick select
+        function addQuickSelectedProduct() {
+            const pId = parseInt(document.getElementById('quickSelectProduct').value);
+            addToCart(pId);
+        }
+
+        // Category Filter Tabs Toggle
+        function filterProducts(cat) {
+            document.querySelectorAll('.cat-tab').forEach(btn => {
+                btn.classList.remove('bg-red-700', 'text-white');
+                btn.classList.add('bg-white', 'text-stone-700');
+            });
+            event.currentTarget.classList.remove('bg-white', 'text-stone-700');
+            event.currentTarget.classList.add('bg-red-700', 'text-white');
+            renderProducts(cat);
+        }
+
+        // Cart Logic
+        function addToCart(productId) {
+            const product = productsData.find(p => p.id === productId);
+            const item = cart.find(c => c.id === productId);
+            if (item) {
+                item.qty++;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+            updateCartUI();
+        }
+
+        function updateCartQty(productId, change) {
+            const item = cart.find(c => c.id === productId);
+            if (item) {
+                item.qty += change;
+                if (item.qty <= 0) {
+                    cart = cart.filter(c => c.id !== productId);
+                }
+            }
+            updateCartUI();
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(c => c.id !== productId);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById('cartBadge');
+            const totalQty = cart.reduce((acc, cur) => acc + cur.qty, 0);
+            
+            if(totalQty > 0) {
+                badge.textContent = totalQty;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+
+            // Update Side Modal Cart
+            const cartItems = document.getElementById('cartItems');
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="text-stone-500 text-center py-8 text-sm">Giỏ hàng của bạn đang trống.</p>';
+            } else {
+                cartItems.innerHTML = cart.map(i => `
+                    <div class="flex items-center justify-between border-b border-stone-100 pb-3">
+                        <div class="flex items-center space-x-3">
+                            <img src="${i.img}" class="w-12 h-12 object-cover rounded-lg border border-amber-200">
+                            <div>
+                                <h4 class="font-semibold text-xs text-stone-900 leading-snug">${i.name}</h4>
+                                <p class="text-xs text-red-600 font-bold">${i.price.toLocaleString('vi-VN')}đ</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button onclick="updateCartQty(${i.id}, -1)" class="w-6 h-6 rounded bg-stone-100 font-bold text-stone-700 hover:bg-stone-200">-</button>
+                            <span class="text-xs font-bold text-stone-800">${i.qty}</span>
+                            <button onclick="updateCartQty(${i.id}, 1)" class="w-6 h-6 rounded bg-stone-100 font-bold text-stone-700 hover:bg-stone-200">+</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Update Order Form Preview
+            const orderSummaryList = document.getElementById('orderSummaryList');
+            const countBadge = document.getElementById('selectedCountBadge');
+            countBadge.textContent = totalQty + " món";
+
+            if (cart.length === 0) {
+                orderSummaryList.innerHTML = `
+                    <p class="text-stone-500 text-sm italic text-center py-6">
+                        Chưa có bánh nào trong giỏ hàng.<br>Hãy nhấn "Thêm vào giỏ" ở danh mục trên hoặc chọn bánh nhanh bên dưới!
+                    </p>
+                `;
+            } else {
+                orderSummaryList.innerHTML = cart.map(i => `
+                    <div class="flex items-center justify-between p-2 bg-amber-50/60 rounded-lg border border-amber-100 text-xs">
+                        <div class="flex items-center space-x-2">
+                            <img src="${i.img}" class="w-10 h-10 object-cover rounded">
+                            <div>
+                                <p class="font-bold text-stone-900">${i.name}</p>
+                                <p class="text-stone-500">${i.price.toLocaleString('vi-VN')}đ x ${i.qty}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="font-extrabold text-red-700">${(i.price * i.qty).toLocaleString('vi-VN')}đ</span>
+                            <button onclick="removeFromCart(${i.id})" class="text-stone-400 hover:text-red-600 pl-1"><i class="fa-solid fa-trash-can"></i></button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            const totalSum = cart.reduce((acc, cur) => acc + (cur.price * cur.qty), 0);
+            document.getElementById('cartTotal').textContent = totalSum.toLocaleString('vi-VN') + 'đ';
+            document.getElementById('subTotalText').textContent = totalSum.toLocaleString('vi-VN') + 'đ';
+            document.getElementById('grandTotalText').textContent = totalSum.toLocaleString('vi-VN') + 'đ';
+        }
+
+        function toggleCartModal(open) {
+            const modal = document.getElementById('cartModal');
+            if (open !== undefined) {
+                if (open) modal.classList.remove('hidden');
+                else modal.classList.add('hidden');
+            } else {
+                modal.classList.toggle('hidden');
+            }
+        }
+
+        function checkoutCart() {
+            toggleCartModal(false);
+            document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form Submission to Google Apps Script Endpoint
+        async function submitOrder(e) {
+            e.preventDefault();
+            
+            if (cart.length === 0) {
+                alert('Quý khách vui lòng chọn ít nhất 1 sản phẩm bánh pía vào giỏ hàng trước khi đặt hàng nhé!');
+                document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Đang xử lý gửi đơn hàng...</span>';
+
+            const name = document.getElementById('custName').value.trim();
+            const phone = document.getElementById('custPhone').value.trim();
+            const email = document.getElementById('custEmail').value.trim();
+            const city = document.getElementById('custCity').value.trim();
+            const address = document.getElementById('custAddress').value.trim();
+            const payMethod = document.querySelector('input[name="payMethod"]:checked').value;
+            const note = document.getElementById('custNote').value.trim();
+            const grandTotal = cart.reduce((acc, cur) => acc + (cur.price * cur.qty), 0);
+
+            // Detailed structured payload
+            const orderPayload = {
+                created_at: new Date().toLocaleString('vi-VN'),
+                customer: {
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    city: city,
+                    full_address: `${address}, ${city}`
+                },
+                payment_method: payMethod,
+                note: note,
+                cart_items: cart.map(item => ({
+                    product_id: item.id,
+                    product_name: item.name,
+                    unit_price: item.price,
+                    quantity: item.qty,
+                    subtotal: item.price * item.qty
+                })),
+                total_amount: grandTotal
+            };
+
+            try {
+                // Post JSON payload to Apps Script Web App
+                await fetch(API_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(orderPayload)
+                });
+
+                alert(`Cảm ơn anh/chị ${name}! Đơn hàng Bánh Pía Giang Mekong đã được gửi thành công.\nChúng tôi sẽ liên hệ số điện thoại ${phone} để xác nhận giao bánh sớm nhất ạ!`);
+                
+                document.getElementById('orderForm').reset();
+                cart = [];
+                updateCartUI();
+            } catch (err) {
+                console.error("Order submission error:", err);
+                alert('Đã có thông tin đơn hàng! Quý khách vui lòng gọi hoặc Zalo trực tiếp Hotline 0901 989 717 để Giang Mekong hỗ trợ ngay nhé!');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fa-solid fa-paper-plane text-lg"></i> <span>XÁC NHẬN GỬI ĐƠN HÀNG NGAY</span>';
+            }
+        }
+
+        // Initialize App on Window Load
+        window.onload = function() {
+            renderProducts();
+            populateQuickSelectOptions();
+            updateCartUI();
+        };
+    </script>
+</body>
+</html>
